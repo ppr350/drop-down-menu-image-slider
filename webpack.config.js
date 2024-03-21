@@ -10,7 +10,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Project To Do List',
+            title: 'drop-down-menu-',
             template: './src/index.html',
             filename: 'index.html',
         })
