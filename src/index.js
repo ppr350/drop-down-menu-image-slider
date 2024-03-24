@@ -12,27 +12,32 @@ window.addEventListener('load', (e) => {
     // hidecontactByDefault()
     // showPortfolioDropDown()
     // showContactDropDown()
-    hideMenu()
+    // topMenus[i].children[1].style.display = 'none'
+    optionMenu()
 })
 
-function hideMenu() {
+function optionMenu() {
     for (let i = 0; i < topMenus.length; i++) {
-        console.log(topMenus[i])
-        topMenus[i].addEventListener('mouseout', () => {
-            // topMenus[i].children[1].style.display = 'none'
-            // console.log(topMenus[i])
-            showOrHide(topMenus[i].children[1])
-        })
+        // console.log(topMenus[i])
         topMenus[i].addEventListener('mouseover', () => {
-            // topMenus[i].children[1].style.display = 'block'
-            // console.log(topMenus[i])
-            showOrHide(topMenus[i].children[1])
+            topMenus[i].children[1].style.display = 'block'
+
         })
+        topMenus[i].addEventListener('mouseout', () => {
+            topMenus[i].children[1].style.display = 'none'
+            // topMenus[i].children[1].classList.add
+            // showOrHide(topMenus[i].children[1])
+
+        })
+
     }
 }
 
 function showOrHide(menuOptions) {
-    menuOptions.style.display == 'block' ? 'hide' :  'block'
+
+    // if (topMenus[i].children[1].style.display = 'block') {
+
+    // }
 }
 
 // function hidePortfolioByDefault() {
