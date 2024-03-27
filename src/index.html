@@ -7,25 +7,29 @@
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <h1 id="title">DROP DOWN MENU</h1>
+    <div id="title-container">
+      <h1 id="title">DROP DOWN MENU</h1>
+    </div>
 
-    <ul>
-      <li id="home"><a href="index.html">HOME</a></li>
-      <li id="portfolio" class="top-menus"><a href="#">PORTFOLIO</a>
-        <ul>
-          <li><a href="#">PHOTOGRAPHY</a></li>
-          <li><a href="#">WEB DEVELOPMENT</a></li>
-          <li><a href="#">IRISH LANGUAGE</a></li>
-        </ul>
-      </li>
-      <li id="contact" class="top-menus"><a href="#">CONTACT</a>
-        <ul>
-          <li><a href="#">EMAIL</a></li>
-          <li><a href="#">PHONE</a></li>
-          <li><a href="#">SOCIAL</a></li>
-        </ul>
-      </li>
-    </ul>
+    <nav>
+      <ul id="top-menu-container" role="list">
+        <li id="home"><a href="index.html">HOME</a></li>
+        <li id="portfolio" class="top-menus"><a href="#">PORTFOLIO</a>
+          <ul class="drop-down-container" role="list">
+            <li class="drop-down"><a href="#">PHOTOGRAPHY</a></li>
+            <li class="drop-down"><a href="#">WEB DEVELOPMENT</a></li>
+            <li class="drop-down"><a href="#">IRISH LANGUAGE</a></li>
+          </ul>
+        </li>
+        <li id="contact" class="top-menus"><a href="#">CONTACT</a>
+          <ul class="drop-down-container" role="list">
+            <li class="drop-down"><a href="#">EMAIL</a></li>
+            <li class="drop-down"><a href="#">PHONE</a></li>
+            <li class="drop-down"><a href="#">SOCIAL</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
   </body>
 </html>

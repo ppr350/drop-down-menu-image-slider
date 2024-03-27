@@ -11,6 +11,57 @@ html {
 }
 
 body {
+  background-color: #4F3C2F;
   font-family: system-ui, sans-serif;
   font-size: 1rem;
 }
+
+/* #title-container {
+  padding: 0.2em;
+} */
+
+#title {
+  background-color: #9B842E;
+  color: #FFFFFF;
+  padding: 0.1em;
+}
+
+nav {
+  background-color: #9B5C2E;
+}
+
+#top-menu-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0.2em;
+}
+
+.top-menus {
+  margin-left: 1rem;
+  position: relative;
+}
+
+.drop-down-container {
+  position: absolute;
+  background-color: #9B5C2E;
+  padding: 0 0.2em 0.2em 0.2em;
+}
+
+.drop-down {
+  transition: height 300ms ease-in, opacity 50ms ease-in;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #000000;
+}
+
