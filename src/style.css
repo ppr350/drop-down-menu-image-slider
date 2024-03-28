@@ -45,10 +45,12 @@ nav {
   position: absolute;
   background-color: #9B5C2E;
   padding: 0 0.2em 0.2em 0.2em;
+  -webkit-animation: slide-down .3s ease-in-out;
+  -moz-animation: slide-down .3s ease-in-out;
 }
 
 .drop-down {
-  transition: height 300ms ease-in, opacity 50ms ease-in;
+
 }
 
 li {
@@ -65,3 +67,24 @@ a:hover {
   color: #000000;
 }
 
+@-webkit-keyframes slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@-moz-keyframes slide-down {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
