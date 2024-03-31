@@ -11,17 +11,18 @@
       <h1 id="title">DROP DOWN MENU</h1>
     </div>
 
-    <nav>
+    <!-- Drop Down Menu / Mobile Menu -->
+    <nav id="nav">
       <ul id="top-menu-container" role="list">
         <li id="home"><a href="index.html">HOME</a></li>
-        <li id="portfolio" class="top-menus"><a href="#">PORTFOLIO</a>
+        <li id="portfolio" class="top-menus" tabindex="0"><a href="#">PORTFOLIO</a>
           <ul class="drop-down-container" role="list">
             <li class="drop-down"><a href="#">PHOTOGRAPHY</a></li>
             <li class="drop-down"><a href="#">WEB DEVELOPMENT</a></li>
             <li class="drop-down"><a href="#">IRISH LANGUAGE</a></li>
           </ul>
         </li>
-        <li id="contact" class="top-menus"><a href="#">CONTACT</a>
+        <li id="contact" class="top-menus" tabindex="0"><a href="#">CONTACT</a>
           <ul class="drop-down-container" role="list">
             <li class="drop-down"><a href="#">EMAIL</a></li>
             <li class="drop-down"><a href="#">PHONE</a></li>
@@ -30,6 +31,25 @@
         </li>
       </ul>
     </nav>
+
+    <p id="image-slider-title">SINGLES FROM E.MO.TION</p>
+
+    <!-- Image Slider -->
+    <div id="image-slider">
+      <img class="image" src="../AllThat.jpg" alt="AllThat">
+      <img class="image" src="../Emotion.jpg" alt="Emotion">
+      <img class="image" src="../MakingTheMostOfTheNight.jpg" alt="MakingTheMostOfTheNight">
+      <img class="image" src="../RunAwayWithMe.jpg" alt="RunAwayWithMe">
+      <img class="image" src="../YourType.jpg" alt="YourType">
+    </div>
+
+    <div id="nav-button">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
 
   </body>
 </html>

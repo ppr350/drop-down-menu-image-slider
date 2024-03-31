@@ -10,6 +10,14 @@ window.addEventListener('load', () => {
     addListenersToTopMenus()
 })
 
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.top-menus')) {
+        topMenus.forEach(menu => {
+            menu.children[1].style.display = 'none'
+        })
+    }
+})
+
 function addListenersToTopMenus() {
     for (let i = 0; i < topMenus.length; i++) {
         topMenus[i].addEventListener('mouseover', () => {
@@ -18,6 +26,7 @@ function addListenersToTopMenus() {
         topMenus[i].addEventListener('mouseout', () => {
             showOrHideDropDown(topMenus[i])
         })
+
     }
 }
 
