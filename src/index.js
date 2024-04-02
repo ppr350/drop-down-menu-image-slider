@@ -85,11 +85,15 @@ function addImage() {
 
     for (let i = 0; i < dotContainer.children.length; i++) {
         dotContainer.children[i].addEventListener('click', (e) => {
-            // console.log(dotContainer.indexOf(e.target))
-            const getActiveDot = Array.from(dotContainer.children)
-            console.log(getActiveDot.indexOf(e.target))
-            const activeDot = getActiveDot.indexOf(e.target)
-            changeSlide(activeDot)
+
+            // const getActiveDot = Array.from(dotContainer.children)
+            // console.log(getActiveDot.indexOf(e.target))
+            // const activeDot = getActiveDot.indexOf(e.target)
+
+            // console.log(getActiveDot[activeDot])
+            // changeSlide(getActiveDot[activeDot])
+            changeSlide(e.target)
+            
         })
     }
 }
@@ -106,8 +110,6 @@ function addArrow() {
         arrowContainer.appendChild(arrow)
     })
 }
-
-
 
 function changeSlide(slide) {
     //  hide images
@@ -131,9 +133,12 @@ function changeSlide(slide) {
             }
         }   
     }
-
-    // if (slide.)
-    console.log(slide)
+    else if (slide.classList.contains('dot')) {
+            const getActiveDot = Array.from(dotContainer.children)
+            console.log(getActiveDot.indexOf(slide))
+            const activeDot = getActiveDot.indexOf(slide)
+            console.log(getActiveDot[activeDot])
+    }
 
     // show current image
     imageContainer.children[currentImage].style.opacity = 1
