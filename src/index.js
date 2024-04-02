@@ -10,6 +10,8 @@ window.addEventListener('load', () => {
         menu.children[1].style.display = 'none'
     })
     addListenersToTopMenus()
+    addImage()
+    addArrow()
 })
 
 document.addEventListener('click', (e) => {
@@ -38,26 +40,103 @@ function showOrHideDropDown(menus) {
 }
 
 // Image Slider
-const images = document.querySelectorAll('#image-slider img')
-const dots = document.querySelectorAll('.dot')
+const imageContainer = document.querySelector('#images')
+const dotContainer = document.querySelector('#dots')
+const arrowContainer = document.querySelector('#arrows')
+
 let currentImage = 0
-const interval = 3000
 
-function changeImage(toCurrentImage) {
-    for (let i = 0; i < images.length; i++) {
-        images[i].style.opacity = 0
-        dots[i].classList.remove('active')
+const images = [
+    '../AllThat.jpg',
+    '../Emotion.jpg',
+    '../MakingTheMostOfTheNight.jpg',
+    '../RunAwayWithMe.jpg',
+    '../YourType.jpg'
+]
+
+const arrows = [
+    {
+        'sign': '<',
+        'class': 'previous'
+    },
+    {
+        'sign': '>',
+        'class': 'next'
     }
-    currentImage = (currentImage + 1) % images.length
+]
 
-    images[currentImage].style.opacity = 1
-    dots[currentImage].classList.add('active')
+function addImage() {
+    images.forEach(image => {
+        const img = document.createElement('img')
+        img.src = image
+        img.classList.add('image')
+        img.alt = 'image'
+        imageContainer.appendChild(img)
+        img.style.opacity = 0
 
-    if (toCurrentImage != undefined) {
-        clearInterval(timer)
-        timer = setInterval(changeImage, interval)
-        currentImage = toCurrentImage
+        const dot = document.createElement('span')
+        dot.classList.add('dot')
+        dotContainer.appendChild(dot)
+    })
+
+    // Initialize first slide
+    imageContainer.firstElementChild.style.opacity = 1
+    dotContainer.firstElementChild.classList.add('active')
+
+    for (let i = 0; i < dotContainer.children.length; i++) {
+        dotContainer.children[i].addEventListener('click', (e) => {
+            // console.log(dotContainer.indexOf(e.target))
+            const getActiveDot = Array.from(dotContainer.children)
+            console.log(getActiveDot.indexOf(e.target))
+            const activeDot = getActiveDot.indexOf(e.target)
+            changeSlide(activeDot)
+        })
     }
 }
 
-const timer = setInterval(changeImage, interval)
+function addArrow() {
+    arrows.forEach(indicator => {
+        const arrow = document.createElement('span')
+        arrow.innerText = indicator.sign
+        arrow.classList = indicator.class
+        arrow.classList.add('arrow')
+        arrow.addEventListener('click', (e) => {
+            changeSlide(e.target)
+        })
+        arrowContainer.appendChild(arrow)
+    })
+}
+
+
+
+function changeSlide(slide) {
+    //  hide images
+    for (let i = 0; i < imageContainer.children.length; i++) {
+        imageContainer.children[i].style.opacity = 0
+        dotContainer.children[i].classList.remove('active')
+    }
+
+    if (slide.parentElement.id === 'arrows') {
+        if (slide.classList.contains('previous')) {
+            if (currentImage === 0) {
+                currentImage = imageContainer.children.length
+            }
+            --currentImage
+            
+        } else if (slide.classList.contains('next')) {
+            if (currentImage === imageContainer.children.length -1) {
+                currentImage = 0
+            } else {
+                ++currentImage
+            }
+        }   
+    }
+
+    // if (slide.)
+    console.log(slide)
+
+    // show current image
+    imageContainer.children[currentImage].style.opacity = 1
+    dotContainer.children[currentImage].classList.add('active')
+}
+
