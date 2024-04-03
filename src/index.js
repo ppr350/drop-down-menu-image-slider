@@ -65,6 +65,11 @@ const arrows = [
     }
 ]
 
+
+const countDown = 3000
+const timer = setInterval(autoRun, countDown)
+
+
 function addImage() {
     images.forEach(image => {
         const img = document.createElement('img')
@@ -85,15 +90,7 @@ function addImage() {
 
     for (let i = 0; i < dotContainer.children.length; i++) {
         dotContainer.children[i].addEventListener('click', (e) => {
-
-            // const getActiveDot = Array.from(dotContainer.children)
-            // console.log(getActiveDot.indexOf(e.target))
-            // const activeDot = getActiveDot.indexOf(e.target)
-
-            // console.log(getActiveDot[activeDot])
-            // changeSlide(getActiveDot[activeDot])
             changeSlide(e.target)
-            
         })
     }
 }
@@ -106,31 +103,44 @@ function addArrow() {
         arrow.classList.add('arrow')
         arrow.addEventListener('click', (e) => {
             changeSlide(e.target)
+            console.log(e.target)
         })
         arrowContainer.appendChild(arrow)
     })
 }
 
-function changeSlide(slide) {
+function clearSlide() {
     //  hide images
     for (let i = 0; i < imageContainer.children.length; i++) {
         imageContainer.children[i].style.opacity = 0
         dotContainer.children[i].classList.remove('active')
     }
+}
+
+function previousSlide() {
+    if (currentImage === 0) {
+        currentImage = imageContainer.children.length
+    }
+    --currentImage
+}
+
+function nextSlide() {
+    if (currentImage === imageContainer.children.length -1) {
+        currentImage = 0
+    } else {
+        ++currentImage
+    }
+}
+
+function changeSlide(slide) {
+    clearSlide()
 
     if (slide.parentElement.id === 'arrows') {
         if (slide.classList.contains('previous')) {
-            if (currentImage === 0) {
-                currentImage = imageContainer.children.length
-            }
-            --currentImage
+            previousSlide()
             
         } else if (slide.classList.contains('next')) {
-            if (currentImage === imageContainer.children.length -1) {
-                currentImage = 0
-            } else {
-                ++currentImage
-            }
+            nextSlide()
         }   
     }
     else if (slide.classList.contains('dot')) {
@@ -138,9 +148,31 @@ function changeSlide(slide) {
             console.log(getActiveDot.indexOf(slide))
             const activeDot = getActiveDot.indexOf(slide)
             console.log(getActiveDot[activeDot])
-    }
+            currentImage = activeDot
+    } 
+    // else {
+    //     ++currentImage
+    // }
 
     // show current image
+    imageContainer.children[currentImage].style.opacity = 1
+    dotContainer.children[currentImage].classList.add('active')
+
+    setTimeout(timer, 3000)
+    // reRunTimer()
+
+}
+
+function reRunTimer() {
+    setTimeout(function() {
+        console.log('run')
+    }, 1000);
+}
+
+function autoRun() {
+
+    clearSlide()
+    nextSlide()
     imageContainer.children[currentImage].style.opacity = 1
     dotContainer.children[currentImage].classList.add('active')
 }
