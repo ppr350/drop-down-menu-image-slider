@@ -2,11 +2,11 @@ import { forEach, omit } from "lodash";
 import "./style.css";
 import { addListenersToTopMenus } from "./dropDownMenu"
 import { addImage, addArrow } from "./imageSlider"
-import { AllThat } from "./AllThat.jpg"
-import { Emotion } from "./Emotion.jpg"
-import { MakingTheMostOfTheNight } from './MakingTheMostOfTheNight.jpg'
-import { RunAwayWithMe } from './RunAwayWithMe.jpg'
-import { YourType } from './YourType.jpg'
+import AllThat from "./AllThat.jpg"
+import Emotion from "./Emotion.jpg"
+import MakingTheMostOfTheNight from './MakingTheMostOfTheNight.jpg'
+import RunAwayWithMe from './RunAwayWithMe.jpg'
+import YourType from './YourType.jpg'
 
 window.addEventListener('load', () => {
     topMenus.forEach(menu => {
