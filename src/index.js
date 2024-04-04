@@ -2,7 +2,9 @@ import { forEach, omit } from "lodash";
 import "./style.css";
 import { addListenersToTopMenus } from "./dropDownMenu"
 import { addImage, addArrow } from "./imageSlider"
-// import { AllThat } from "AllThat.jpg"
+import { AllThat } from "./AllThat.jpg"
+import { Emotion } from "./Emotion.jpg"
+
 
 window.addEventListener('load', () => {
     topMenus.forEach(menu => {
@@ -23,4 +25,4 @@ const arrowContainer = document.querySelector('#arrows')
 
 
 
-export { topMenus, imageContainer, dotContainer, arrowContainer }
+export { topMenus, imageContainer, dotContainer, arrowContainer, AllThat, Emotion }
