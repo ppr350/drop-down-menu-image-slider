@@ -4,6 +4,9 @@ import { addListenersToTopMenus } from "./dropDownMenu"
 import { addImage, addArrow } from "./imageSlider"
 import { AllThat } from "./AllThat.jpg"
 import { Emotion } from "./Emotion.jpg"
+import { MakingTheMostOfTheNight } from './MakingTheMostOfTheNight.jpg'
+import { RunAwayWithMe } from './RunAwayWithMe.jpg'
+import { YourType } from './YourType.jpg'
 
 window.addEventListener('load', () => {
     topMenus.forEach(menu => {
@@ -24,4 +27,4 @@ const arrowContainer = document.querySelector('#arrows')
 
 
 
-export { topMenus, imageContainer, dotContainer, arrowContainer, AllThat, Emotion }
+export { topMenus, imageContainer, dotContainer, arrowContainer, AllThat, Emotion, MakingTheMostOfTheNight, RunAwayWithMe, YourType }
