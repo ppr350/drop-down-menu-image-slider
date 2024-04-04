@@ -2,7 +2,7 @@ import { forEach, omit } from "lodash";
 import "./style.css";
 import { addListenersToTopMenus } from "./dropDownMenu"
 import { addImage, addArrow } from "./imageSlider"
-import { AllThat } from "./AllThat.jpg"
+// import { AllThat } from "AllThat.jpg"
 
 window.addEventListener('load', () => {
     topMenus.forEach(menu => {
