@@ -22,7 +22,7 @@ const arrows = [
     }
 ]
 
-const countDown = 3000
+const countDown = 5000
 const timer = setInterval(autoRun, countDown)
 
 function addImage() {
@@ -103,9 +103,10 @@ function changeSlide(slide) {
     } 
 
     imageContainer.children[currentImage].style.opacity = 1
+    // imageContainer.children[currentImage].style.
     dotContainer.children[currentImage].classList.add('active')
 
-    setTimeout(timer, 3000)
+    setTimeout(timer, countDown)
 }
 
 function autoRun() {
