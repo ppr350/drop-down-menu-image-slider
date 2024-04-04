@@ -5,7 +5,6 @@ import { addImage, addArrow } from "./imageSlider"
 import { AllThat } from "./AllThat.jpg"
 import { Emotion } from "./Emotion.jpg"
 
-
 window.addEventListener('load', () => {
     topMenus.forEach(menu => {
         menu.children[1].style.display = 'none'

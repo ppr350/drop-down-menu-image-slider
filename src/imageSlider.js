@@ -1,14 +1,14 @@
 import { imageContainer, dotContainer, arrowContainer } from "./index"
-import { AllThat } from "./index"
+// import { AllThat } from "./index"
 
 let currentImage = 0
 
 const images = [
     'AllThat.jpg',
     'Emotion.jpg',
-    '../MakingTheMostOfTheNight.jpg',
-    '../RunAwayWithMe.jpg',
-    '../YourType.jpg'
+    'MakingTheMostOfTheNight.jpg',
+    'RunAwayWithMe.jpg',
+    'YourType.jpg'
 ]
 
 const arrows = [
