@@ -33,5 +33,5 @@ Using Prettier and ESLint together can cause conflict, I use eslint-config-prett
 
 ## Special Thanks
 Discord users Mao && Don't rush learning! on TOP's Javascript-help-1 for advice
-The Odin Project Team for providing such amazing free course
+The Odin Project Team for providing such amazing free course.
 

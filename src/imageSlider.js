@@ -103,7 +103,6 @@ function changeSlide(slide) {
     } 
 
     imageContainer.children[currentImage].style.opacity = 1
-    // imageContainer.children[currentImage].style.
     dotContainer.children[currentImage].classList.add('active')
 
     setTimeout(timer, countDown)
